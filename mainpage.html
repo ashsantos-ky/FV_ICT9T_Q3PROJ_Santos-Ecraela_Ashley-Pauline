@@ -120,7 +120,7 @@
           <option value="0">None</option>
           <option value="0.35">Senior Citizen (35%)</option>
           <option value="0.30">PWD (30%)</option>
-          <option value="0.25">Student (25%)</option>
+          <option value="0.20">Student (20%)</option>
         </select>
       </div>
       <button type="button" class="btn btn-primary" onclick="calculatePrice()">Calculate Price</button>
@@ -133,32 +133,24 @@
    
     var stationFares = {
       "North Avenue": 0,
-      "Quezon Avenue": 10,
-      "GMA Kamuning": 15,
-      "Araneta Center-Cubao": 20,
-      "Santolan": 25,
-      "Ortigas": 30,
-      "Shaw Boulevard": 35,
-      "Boni": 40,
-      "Guadalupe": 45,
-      "Buendia": 50,
-      "Ayala": 55,
-      "Magallanes": 60,
-      "Taft Avenue": 65
+      "Quezon Avenue": 13,
+      "GMA Kamuning": 13,
+      "Araneta Center-Cubao": 16,
+      "Santolan": 16,
+      "Ortigas": 20,
+      "Shaw Boulevard": 20,
+      "Boni": 20,
+      "Guadalupe": 24,
+      "Buendia": 24,
+      "Ayala": 24,
+      "Magallanes": 28,
+      "Taft Avenue": 28,
     };
   
     function calculatePrice() {
       
       var departure = document.getElementById('departure').value;
       var destination = document.getElementById('destination').value;
-  
-      
-      var discount = parseFloat(document.getElementById('discount').value);
-      
-   
-      var basePrice = Math.abs(stationFares[destination] - stationFares[departure]);
-  
-     
       var finalPrice = basePrice - (basePrice * discount);
       
      
