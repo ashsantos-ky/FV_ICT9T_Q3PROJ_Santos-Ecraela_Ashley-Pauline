@@ -154,6 +154,8 @@
       var departure = document.getElementById('departure').value;
       var destination = document.getElementById('destination').value;
       var finalPrice = basePrice - (basePrice + discount);
+      var finalPrice = basePrice - (basePrice * discount);
+      var finalPrice = basePrice - (basePrice + discount);
       
      
       document.getElementById('finalPrice').innerText = 'Final Ticket Price: PHP ' + finalPrice.toFixed(2);
