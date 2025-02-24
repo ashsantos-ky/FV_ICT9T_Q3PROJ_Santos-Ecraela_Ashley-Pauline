@@ -151,13 +151,15 @@
   
     function calculatePrice() {
       
-      var departure = document.getElementById('departure').value;
-      var destination = document.getElementById('destination').value;
       var finalPrice = basePrice - (basePrice + discount);
       var finalPrice = basePrice - (basePrice * discount);
       var finalPrice = basePrice - (basePrice + discount);
-      
-     
+      var departure = document.getElementById('departure').value;
+      var destination = document.getElementById('destination').value;
+      var discount = parseFloat(document.getElementById('discount').value);
+      var basePrice = Math.abs(stationFares[destination] - stationFares[departure]);
+      var finalPrice = basePrice - (basePrice * discount);
+
       document.getElementById('finalPrice').innerText = 'Final Ticket Price: PHP ' + finalPrice.toFixed(2);
     }
   </script>  
