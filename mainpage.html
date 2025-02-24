@@ -148,20 +148,12 @@
       "Magallanes": 28,
       "Taft Avenue": 28,
     };
-  
-    function calculatePrice() {
-      
-      var finalPrice = basePrice - (basePrice + discount);
-      var finalPrice = basePrice - (basePrice * discount);
-      var finalPrice = basePrice - (basePrice - discount);
-      var departure = document.getElementById('departure').value;
-      var destination = document.getElementById('destination').value;
-      var discount = parseFloat(document.getElementById('discount').value);
-      var basePrice = (stationFares[destination] - stationFares[departure]);
-      v
-
-      document.getElementById('finalPrice').innerText = 'Final Ticket Price: PHP ' + finalPrice.toFixed(2);
-    }
+  function calculatePrice(){
+    var value1 = document.getElementById("departure").value;
+    var value2 = document.getElementById("destination").value;
+    var sum = departure(value1) + destination(value2);
+    document.write("Final Ticket Price: PHP +sum);
+    
   </script>  
 
 </body>
