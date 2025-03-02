@@ -132,29 +132,27 @@
 </div>
 
 <script>
-   
-    var stationFares = {
-      "North Avenue": 0,
-      "Quezon Avenue": 13,
-      "GMA Kamuning": 13,
-      "Araneta Center-Cubao": 16,
-      "Santolan": 16,
-      "Ortigas": 20,
-      "Shaw Boulevard": 20,
-      "Boni": 20,
-      "Guadalupe": 24,
-      "Buendia": 24,
-      "Ayala": 24,
-      "Magallanes": 28,
-      "Taft Avenue": 28,
-    };
-  function calculatePrice(){
-    var value1 = document.getElementById("departure").value;
-    var value2 = document.getElementById("destination").value;
-    var sum = departure(value1) + destination(value2);
-    document.write("Final Ticket Price: PHP +sum);
-    
-  </script>  
+
+  var fares = {
+    "Recto": { "Legarda": 13, "Pureza": 15, "V. Mapa": 18, "J. Ruiz": 19, "Gilmore": 21, "Betty Go": 22, "Cubao": 23, "Anonas": 25, "Katipunan": 26, "Santolan": 28, "Marikina": 31, "Antipolo": 33 },
+    "Legarda": { "Recto": 13, "Pureza": 15, "V. Mapa": 17, "J. Ruiz": 18, "Gilmore": 21, "Betty Go": 22, "Cubao": 24, "Anonas": 25, "Katipunan": 27, "Santolan": 29, "Marikina": 32, "Antipolo": 33 },
+    "Pureza": { "Recto": 15, "Legarda": 15, "V. Mapa": 13, "J. Ruiz": 15, "Gilmore": 16, "Betty Go": 17, "Cubao": 19, "Anonas": 20, "Katipunan": 22, "Santolan": 24, "Marikina": 26, "Antipolo": 29 },
+
+  };
+
+  function calculatePrice() {
+    var departure = document.getElementById("departure").value;
+    var destination = document.getElementById("destination").value;
+    var discount = parseFloat(document.getElementById("discount").value);
+
+    var baseFare = fares[departure] && fares[departure][destination] ? fares[departure][destination] : 0;
+
+    var finalFare = baseFare - (baseFare * discount);
+
+    document.getElementById("finalPrice").innerHTML = "Final Ticket Price: PHP " + finalFare.toFixed(2);
+  }
+</script>
+
 
 </body>
 </html> 
