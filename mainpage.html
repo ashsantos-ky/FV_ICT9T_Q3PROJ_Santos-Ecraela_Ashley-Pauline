@@ -122,21 +122,21 @@
   </section>
 </div>
 
+<button type="button" class="btn btn-success" onclick="applyDiscount()">Apply 20% Discount</button>
 <script>
-    function calculatePrice() {
-      var baseFare = 13; 
-      var farePerStation = 2; 
-  
-      var departure = document.getElementById("departure").value;
-      var destination = document.getElementById("destination").value;
-  
-      var distance = (departure - destination) * (departure - destination); 
-      var finalFare = baseFare + (farePerStation * distance);
-  
-      document.getElementById("finalPrice").innerHTML =
-        ["Final Ticket Price: PHP ", finalFare.toFixed(2)].join("");
-    }
-  </script>  
+  function calculatePrice() {
+    var departure = document.getElementById("departure").value;
+    var destination = document.getElementById("destination").value;
+    var fare = 13 + 2 * Math.pow(departure - destination, 2); // basically 13 to the power of 2
+    document.getElementById("finalPrice").innerText = "Final Ticket Price: PHP " + fare.toFixed(2);
+    document.getElementById("finalPrice").setAttribute("data-original", fare);
+  }
+
+  function applyDiscount() {
+    var price = parseFloat(document.getElementById("finalPrice").getAttribute("data-original"));
+    document.getElementById("finalPrice").innerText = "Discounted Price: PHP " + (price * 0.8).toFixed(2);
+  }
+</script> 
 
 </body>
 </html>
