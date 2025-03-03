@@ -7,16 +7,19 @@
   <title>3rd QTR Project</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    
     body {
       font-family: "DM Serif Text", serif;
       font-size: 20px;
       background-color: #f9f9f9;
     }
+
     .navbar {
       padding-top: 2px;
       padding-bottom: 2px;
       background-color: #212d4f;
     }
+
     .container {
       margin-top: 50px;
       background: #fff;
@@ -25,27 +28,30 @@
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
       align-items: center;
     }
+
     .ticket-section {
       padding: 20px;
       background: #fff;
       border-radius: 10px;
       margin-top: 20px;
     }
+
     .metro-map {
       width: 500px;
       height: 500px;
       object-fit: cover;
     }
+
     .navbar-center {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
     }
+
     .navbar-right {
       position: absolute;
       right: 10px;
     }
-    
   </style>
 </head>
 <body>
@@ -82,53 +88,53 @@
       <div class="form-group">
         <label for="departure">Departure Station:</label>
         <select class="form-control" id="departure">
-            <option value="0">Choose</option>
-            <option value="1">North Avenue</option>
-            <option value="2">Quezon Avenue</option>
-            <option value="3">GMA Kamuning</option>
-            <option value="4">Araneta Center-Cubao</option>
-            <option value="5">Santolan</option>
-            <option value="6">Ortigas</option>
-            <option value="7">Shaw Boulevard</option>
-            <option value="8">Boni</option>
-            <option value="9">Guadalupe</option>
-            <option value="10">Buendia</option>
-            <option value="11">Ayala</option>
-            <option value="12">Magallanes</option>
-            <option value="13">Taft Avenue</option>
+          <option value="0">Choose</option>
+          <option value="1">North Avenue</option>
+          <option value="2">Quezon Avenue</option>
+          <option value="3">GMA Kamuning</option>
+          <option value="4">Araneta Center-Cubao</option>
+          <option value="5">Santolan</option>
+          <option value="6">Ortigas</option>
+          <option value="7">Shaw Boulevard</option>
+          <option value="8">Boni</option>
+          <option value="9">Guadalupe</option>
+          <option value="10">Buendia</option>
+          <option value="11">Ayala</option>
+          <option value="12">Magallanes</option>
+          <option value="13">Taft Avenue</option>
         </select>
       </div>
       <div class="form-group">
         <label for="destination">Destination Station:</label>
         <select class="form-control" id="destination">
-            <option value="0">Choose</option>
-            <option value="1">North Avenue</option>
-            <option value="2">Quezon Avenue</option>
-            <option value="3">GMA Kamuning</option>
-            <option value="4">Araneta Center-Cubao</option>
-            <option value="5">Santolan</option>
-            <option value="6">Ortigas</option>
-            <option value="7">Shaw Boulevard</option>
-            <option value="8">Boni</option>
-            <option value="9">Guadalupe</option>
-            <option value="10">Buendia</option>
-            <option value="11">Ayala</option>
-            <option value="12">Magallanes</option>
-            <option value="13">Taft Avenue</option>
+          <option value="0">Choose</option>
+          <option value="1">North Avenue</option>
+          <option value="2">Quezon Avenue</option>
+          <option value="3">GMA Kamuning</option>
+          <option value="4">Araneta Center-Cubao</option>
+          <option value="5">Santolan</option>
+          <option value="6">Ortigas</option>
+          <option value="7">Shaw Boulevard</option>
+          <option value="8">Boni</option>
+          <option value="9">Guadalupe</option>
+          <option value="10">Buendia</option>
+          <option value="11">Ayala</option>
+          <option value="12">Magallanes</option>
+          <option value="13">Taft Avenue</option>
         </select>
       </div>
       <button type="button" class="btn btn-primary" onclick="calculatePrice()">Calculate Price</button>
       <h3 id="finalPrice" style="margin-top: 20px;"></h3>
+      <button type="button" class="btn btn-primary" onclick="applyDiscount()">Apply 20% Discount</button>
     </form>
   </section>
 </div>
 
-<button type="button" class="btn btn-success" onclick="applyDiscount()">Apply 20% Discount</button>
 <script>
   function calculatePrice() {
     var departure = document.getElementById("departure").value;
     var destination = document.getElementById("destination").value;
-    var fare = 13 + 2 * Math.pow(departure - destination, 2); // basically 13 to the power of 2
+    var fare = 13 + 2 * Math.pow(departure - destination, 2);
     document.getElementById("finalPrice").innerText = "Final Ticket Price: PHP " + fare.toFixed(2);
     document.getElementById("finalPrice").setAttribute("data-original", fare);
   }
@@ -139,11 +145,9 @@
   }
 </script> 
 
- 
-     <div class="container">
-            <p>&copy;https://docs.google.com/document/d/1XYO5OcwPjuwRBrl55bdirHAy6CHNdsT-RrhHuQQqnD4/edit?tab=t.0">References!</p>
-        </div>
-   
+<div class="container">
+  <p>&copy; <a href="https://docs.google.com/document/d/1XYO5OcwPjuwRBrl55bdirHAy6CHNdsT-RrhHuQQqnD4/edit?tab=t.0">References!</a></p>
+</div>
 
 </body>
 </html>
